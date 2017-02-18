@@ -28,3 +28,5 @@ $letters = [
     'y' => false,
     'z' => false
 ];
+
+$serializedLetters = '';

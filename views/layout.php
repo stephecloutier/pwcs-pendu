@@ -41,6 +41,8 @@
                             <?php endif; ?>
                         <?php endforeach; ?>
                     </select>
+                    <input type="hidden" name="serializedLetters" value="<?= $serializedLetters ?>">
+
                     <input type="submit" value="essayer cette lettre">
                 </div>
             </fieldset>
