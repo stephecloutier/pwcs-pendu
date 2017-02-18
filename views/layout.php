@@ -22,7 +22,14 @@
         </div>
 
         <div>
-            <p>Voici les lettres que tu as déjà essayées&nbsp;: *x*</p>
+            <p>Voici les lettres que tu as déjà essayées&nbsp;:
+                <?php foreach($letters as $letter => $statut) {
+                    if($statut){
+                        echo $letter;
+                    }
+                }
+                ?>
+            </p>
         </div>
 
         <div>
