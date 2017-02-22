@@ -30,3 +30,11 @@ $letters = [
 ];
 
 $serializedLetters = '';
+
+$triedLetters = '';
+
+define('TOTAL_TRIALS', 8);
+
+$remainingTrials = TOTAL_TRIALS;
+
+$wordIndex = 0;
