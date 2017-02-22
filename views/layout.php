@@ -12,7 +12,7 @@
         <p><?= $chiffre; ?></p>
 
 
-        <h1>Trouve le mot en moins de *x* coups!</h1>
+        <h1>Trouve le mot en moins de 8 coups!</h1>
         <div>
             <p>Le mot à deviner compte *x* lettres : *---------*</p>
         </div>
@@ -38,17 +38,19 @@
 
         <form action="index.php" method="post">
             <fieldset>
-                <legend>Il te reste *x* tentatives avant de mourir&nbsp;!</legend>
+                <legend>Il te reste <?= $remainingTrials; ?> tentatives avant de mourir&nbsp;!</legend>
                 <div>
                     <label for="triedLetter">Choisis une lettre</label>
                     <select name="triedLetter" id="triedLetter">
-                        <?php foreach($letters as $letter => $statut): ?>
-                            <?php if(!$statut): ?>
+                        <?php foreach($letters as $letter => $status): ?>
+                            <?php if(!$status): ?>
                             <option value="<?= $letter; ?>"><?= $letter; ?></option>
                             <?php endif; ?>
                         <?php endforeach; ?>
                     </select>
-                    <input type="hidden" name="serializedLetters" value="<?= $serializedLetters ?>">
+                    <input type="hidden" name="serializedLetters" value="<?= $serializedLetters; ?>">
+                    <input type="hidden" name="triedLetters" value="<?= $triedLetters; ?>">
+                    <input type="hidden" name="wordIndex" value="<?= $wordIndex; ?>">
 
                     <input type="submit" value="essayer cette lettre">
                 </div>
