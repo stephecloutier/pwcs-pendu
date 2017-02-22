@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c24a51cd-c85e-4913-9c22-0c43c50d4790" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/tableController.php" afterPath="$PROJECT_DIR$/controllers/tableController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/layout.php" afterPath="$PROJECT_DIR$/views/layout.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,23 +28,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="layout.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="layout.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/layout.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="884">
-              <caret line="52" column="85" lean-forward="false" selection-start-line="52" selection-start-column="85" selection-end-line="52" selection-end-column="85" />
+            <state relative-caret-position="51">
+              <caret line="14" column="55" lean-forward="false" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="55" />
               <folding>
-                <element signature="e#1125#1131#0#HTML" expanded="true" />
+                <element signature="e#1160#1166#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tableController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="tableController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/tableController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="21" column="60" lean-forward="false" selection-start-line="21" selection-start-column="60" selection-end-line="21" selection-end-column="60" />
+            <state relative-caret-position="374">
+              <caret line="24" column="34" lean-forward="false" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -68,9 +69,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/views/layout.php" />
         <option value="$PROJECT_DIR$/configs/settings.php" />
         <option value="$PROJECT_DIR$/controllers/tableController.php" />
+        <option value="$PROJECT_DIR$/views/layout.php" />
       </list>
     </option>
   </component>
@@ -243,12 +244,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1487797482215</updated>
-      <workItem from="1487797484203" duration="4377000" />
+      <workItem from="1487797484203" duration="4527000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4377000" />
+    <option name="totallyTimeSpent" value="4527000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="832" extended-state="0" />
@@ -308,21 +309,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/layout.php">
+    <entry file="file://$PROJECT_DIR$/controllers/tableController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="52" column="85" lean-forward="false" selection-start-line="52" selection-start-column="85" selection-end-line="52" selection-end-column="85" />
-          <folding>
-            <element signature="e#1125#1131#0#HTML" expanded="true" />
-          </folding>
+        <state relative-caret-position="374">
+          <caret line="24" column="34" lean-forward="false" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/tableController.php">
+    <entry file="file://$PROJECT_DIR$/views/layout.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="21" column="60" lean-forward="false" selection-start-line="21" selection-start-column="60" selection-end-line="21" selection-end-column="60" />
-          <folding />
+        <state relative-caret-position="51">
+          <caret line="14" column="55" lean-forward="false" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="55" />
+          <folding>
+            <element signature="e#1160#1166#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

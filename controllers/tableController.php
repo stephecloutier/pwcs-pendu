@@ -22,6 +22,8 @@ var_dump($wordIndex);
 $wordToFind = trim(file(DATAS_DIR.'/words.txt')[$wordIndex]);
 var_dump($wordToFind);
 
+$wordLength = strlen($wordToFind);
+
 
 // -- Décodage du tableau comprenant les lettres avec leurs statuts
 if($_SERVER['REQUEST_METHOD'] == 'POST'){

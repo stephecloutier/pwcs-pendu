@@ -12,9 +12,9 @@
         <p><?= $chiffre; ?></p>
 
 
-        <h1>Trouve le mot en moins de 8 coups!</h1>
+        <h1>Trouve le mot en moins de <?= TOTAL_TRIALS; ?> coups!</h1>
         <div>
-            <p>Le mot à deviner compte *x* lettres : *---------*</p>
+            <p>Le mot à deviner compte <?= $wordLength; ?> lettres : *---------*</p>
         </div>
 
         <div class="imgPendu">
