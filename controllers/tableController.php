@@ -27,9 +27,8 @@ var_dump($wordToFind);
 $wordLength = strlen($wordToFind);
 
 // -- Affichage des tirets pour le $wordToFind
-for($i = 1; $i <= $wordLength; $i++) {
-    $dashedWord .= '-';
-}
+$dashedWord = str_pad($dashedWord, $wordLength, '-');
+
 
 // -- Décodage du tableau comprenant les lettres avec leurs statuts
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -43,12 +42,21 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         if(isset($_POST['triedLetter'])){
             if(!$letters[$_POST['triedLetter']]) {
                 $triedLetters .= $_POST['triedLetter'];
-                var_dump($triedLetters);
             }
             $letters[$_POST['triedLetter']] = true;
         }
     }
 }
+
+// -- Contrôle pour ajouter la lettre dans $dashedWord si elle correspond à une/des lettres du mot $wordToFind
+for($i = 0; $i < strlen($triedLetters); $i++) {
+    for($j = 0; $j < $wordLength; $j++) {
+        if($triedLetters[$i] === strtolower($wordToFind[$j])) {
+            $dashedWord[$j] = $wordToFind[$j];
+        }
+    }
+}
+
 
 // -- Calcul du nombre d'essais restants
 $remainingTrials -= strlen($triedLetters);
