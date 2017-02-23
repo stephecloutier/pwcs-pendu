@@ -16,7 +16,6 @@ if(!isset($_POST['wordIndex'])) {
 } else {
     $wordIndex = ($_POST['wordIndex']);
 }
-var_dump($wordIndex);
 
 // - Associer $wordToFind à l'index dans $wordIndex
 $wordToFind = trim(file(DATAS_DIR.'/words.txt')[$wordIndex]);
