@@ -44,3 +44,5 @@ $wordToFind = '';
 $wordLength = 0;
 
 $dashedWord = '';
+
+$isLetterFound = false;

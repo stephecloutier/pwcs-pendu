@@ -50,17 +50,18 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 // -- Contrôle pour ajouter la lettre dans $dashedWord si elle correspond à une/des lettres du mot $wordToFind
 for($i = 0; $i < strlen($triedLetters); $i++) {
+    // -- Calcul du nombre d'essais restants
+    $isLetterFound = false;
     for($j = 0; $j < $wordLength; $j++) {
         if($triedLetters[$i] === strtolower($wordToFind[$j])) {
             $dashedWord[$j] = $wordToFind[$j];
+            $isLetterFound = true;
         }
     }
+    if(!$isLetterFound){
+        $remainingTrials--;
+    }
 }
-
-
-// -- Calcul du nombre d'essais restants
-$remainingTrials -= strlen($triedLetters);
-
 
 // -- Encodage des lettres pour les avoir en string
 $serializedLetters = serialize($letters);
