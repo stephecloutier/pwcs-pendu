@@ -33,12 +33,10 @@
         </div>
 
         <?php if($wordToFind == $dashedWord): ?>
-        <div>
-            <p>Bravo ! Tu as trouvé le mot <?= $wordToFind ?>!</p>
-        </div>
+
         <?php endif; ?>
 
-        <?php if($remainingTrials != 0): ?>
+        <?php if($remainingTrials != 0 && $wordToFind !== $dashedWord): ?>
         <form action="index.php" method="post">
             <fieldset>
                 <legend>Il te reste <?= $remainingTrials; ?> tentatives avant de mourir&nbsp;!</legend>
@@ -59,7 +57,11 @@
                 </div>
             </fieldset>
         </form>
-    <?php else: ?>
+        <?php elseif($wordToFind == $dashedWord): ?>
+        <div>
+            <p>Bravo ! Tu as trouvé le mot <?= $wordToFind ?>! <a href="./">Recommencer&nbsp;?</a></p>
+        </div>
+        <?php else: ?>
         <div>
             <p>Tu es mort (Bien tristement)&nbsp;!  <a href="./">Recommencer&nbsp;?</a></p>
         </div>
