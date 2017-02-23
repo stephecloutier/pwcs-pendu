@@ -35,7 +35,7 @@
             <?php elseif($remainingTrials === 1): ?>
             <img src="images/pendu7.gif" alt="../images/pendu7.gif" />
             <?php elseif($remainingTrials === 0): ?>
-            <img src="images/pendu8.gif" alt="../images/pendu7.gif" />
+            <img src="images/pendu8.gif" alt="../images/pendu8.gif" />
             <?php endif; ?>
         </div>
 
@@ -81,7 +81,7 @@
         </div>
         <?php else: ?>
         <div>
-            <p>Tu es mort (Bien tristement)&nbsp;!  <a href="./">Recommencer&nbsp;?</a></p>
+            <p>Tu es mort (Bien tristement)&nbsp;! Le mot était "<?= $wordToFind ?>". <a href="./">Recommencer&nbsp;?</a></p>
         </div>
     <?php endif; ?>
 
