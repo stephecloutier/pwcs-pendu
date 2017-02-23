@@ -18,7 +18,25 @@
         </div>
 
         <div class="imgPendu">
-            <img src="#" alt="ImagesDuPendu" />
+            <?php if($remainingTrials === 8): ?>
+            <img src="images/pendu0.gif" alt="../images/pendu0.gif" />
+            <?php elseif($remainingTrials === 7): ?>
+            <img src="images/pendu1.gif" alt="../images/pendu1.gif" />
+            <?php elseif($remainingTrials === 6): ?>
+            <img src="images/pendu2.gif" alt="../images/pendu2.gif" />
+            <?php elseif($remainingTrials === 5): ?>
+            <img src="images/pendu3.gif" alt="../images/pendu3.gif" />
+            <?php elseif($remainingTrials === 4): ?>
+            <img src="images/pendu4.gif" alt="../images/pendu4.gif" />
+            <?php elseif($remainingTrials === 3): ?>
+            <img src="images/pendu5.gif" alt="../images/pendu5.gif" />
+            <?php elseif($remainingTrials === 2): ?>
+            <img src="images/pendu6.gif" alt="../images/pendu6.gif" />
+            <?php elseif($remainingTrials === 1): ?>
+            <img src="images/pendu7.gif" alt="../images/pendu7.gif" />
+            <?php elseif($remainingTrials === 0): ?>
+            <img src="images/pendu8.gif" alt="../images/pendu7.gif" />
+            <?php endif; ?>
         </div>
 
         <div>
