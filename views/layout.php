@@ -14,7 +14,7 @@
 
         <h1>Trouve le mot en moins de <?= TOTAL_TRIALS; ?> coups!</h1>
         <div>
-            <p>Le mot à deviner compte <?= $wordLength; ?> lettres : *---------*</p>
+            <p>Le mot à deviner compte <?= $wordLength; ?> lettres : <?= $dashedWord ?></p>
         </div>
 
         <div class="imgPendu">

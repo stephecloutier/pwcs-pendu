@@ -42,3 +42,5 @@ $wordIndex = 0;
 $wordToFind = '';
 
 $wordLength = 0;
+
+$dashedWord = '';

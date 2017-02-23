@@ -22,8 +22,14 @@ var_dump($wordIndex);
 $wordToFind = trim(file(DATAS_DIR.'/words.txt')[$wordIndex]);
 var_dump($wordToFind);
 
+
+// - Longueur du $wordToFind
 $wordLength = strlen($wordToFind);
 
+// -- Affichage des tirets pour le $wordToFind
+for($i = 1; $i <= $wordLength; $i++) {
+    $dashedWord .= '-';
+}
 
 // -- Décodage du tableau comprenant les lettres avec leurs statuts
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
