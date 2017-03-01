@@ -10,13 +10,12 @@ $trials = 0;
 $remainingTrials = TOTAL_TRIALS;
 $triedLetters = '';
 $isWordFound = false;
+$isLetterFound = false;
 
 
 $serializedLetters = '';
-
 $wordIndex = 0;
-
 $wordToFind = '';
 
-$isLetterFound = false;
+
 
