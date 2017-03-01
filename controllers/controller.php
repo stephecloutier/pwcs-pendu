@@ -59,18 +59,25 @@
 
     // -- Contrôle pour ajouter la lettre dans $replacementString si elle correspond à une/des lettres du mot $wordToFind
     for($i = 0; $i < strlen($triedLetters); $i++) {
-        // -- Calcul du nombre d'essais restants
-        $isLetterFound = false;
         for($j = 0; $j < $wordLength; $j++) {
             if($triedLetters[$i] === strtolower($wordToFind[$j])) {
                 $replacementString[$j] = $wordToFind[$j];
                 $isLetterFound = true;
             }
         }
-        if(!$isLetterFound){
-            $remainingTrials--;
-        }
     }
+
+    // -- Contrôle pour savoir si le mot est trouvé, incrémentation de $trials et update de $remainingTrials
+
+    if ($wordToFind === $replacementString) {
+        $wordFound = 1;
+    } else {
+        if (!$isLetterFound) {
+            $trials += 1;
+        }
+        $remainingTrials = TOTAL_TRIALS - $trials;
+    }
+
 
     // -- Encodage des lettres pour les avoir en string
     $serializedLetters = serialize($letters);

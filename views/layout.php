@@ -44,10 +44,6 @@
             </p>
         </div>
 
-        <?php if($wordToFind == $replacementString): ?>
-
-        <?php endif; ?>
-
         <?php if($remainingTrials != 0 && $wordToFind !== $replacementString): ?>
         <form action="index.php" method="post">
             <fieldset>
@@ -69,7 +65,7 @@
                 </div>
             </fieldset>
         </form>
-        <?php elseif($wordToFind == $replacementString): ?>
+        <?php elseif($wordFound): ?>
         <div>
             <p>Bravo ! Tu as trouvé le mot <?= $wordToFind ?>! <a href="./">Recommencer&nbsp;?</a></p>
         </div>
