@@ -8,13 +8,14 @@
 
 
     // -- Récupération de l'index et du mot à trouver (GET)
-
     $wordIndex = getWordIndex($wordsArray);
     $wordToFind = getWordToFind($wordsArray, $wordIndex);
 
-    // - Longueur du $wordToFind
+    // -- Longueur du $wordToFind
     $wordLength = strlen($wordToFind);
 
     // -- Affichage des tirets pour le $wordToFind
     $replacementString = getReplacementString($wordLength, REPLACEMENT_CHAR);
 
+    // -- Encodage du tableau associatif des lettres
+    $serializedLetters = serializeLetters($wordsArray);
