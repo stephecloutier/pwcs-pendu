@@ -18,28 +18,6 @@
 
     var_dump($wordToFind);
 
-
-    // -- Décodage du tableau comprenant les lettres avec leurs statuts
-
-
-
-
-
-    // -- Contrôle pour ajouter la lettre dans $replacementString si elle correspond à une/des lettres du mot $wordToFind
-    for($i = 0; $i < strlen($triedLetters); $i++) {
-        // -- Calcul du nombre d'essais restants
-        $isLetterFound = false;
-        for($j = 0; $j < $wordLength; $j++) {
-            if($triedLetters[$i] === strtolower($wordToFind[$j])) {
-                $replacementString[$j] = $wordToFind[$j];
-                $isLetterFound = true;
-            }
-        }
-        if(!$isLetterFound){
-            $remainingTrials--;
-        }
-    }
-
     // -- Contrôle pour savoir si le mot est trouvé
 
     if ($wordToFind === $replacementString) {
