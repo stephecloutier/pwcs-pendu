@@ -18,10 +18,6 @@
     var_dump($wordToFind);
 
 
-    // -- Affichage des tirets pour le $wordToFind
-    $replacementString = str_pad($replacementString, $wordLength, REPLACEMENT_CHAR);
-
-
     // -- Décodage du tableau comprenant les lettres avec leurs statuts
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         // -- Récupérer les lettres dans triedLetters (input de type hidden)

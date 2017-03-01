@@ -14,3 +14,6 @@
     // - Longueur du $wordToFind
     $wordLength = strlen($wordToFind);
 
+    // -- Affichage des tirets pour le $wordToFind
+    $replacementString = getReplacementString($wordLength, REPLACEMENT_CHAR);
+

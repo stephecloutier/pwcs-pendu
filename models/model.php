@@ -21,6 +21,11 @@
         return strtolower(trim($wordsArray[$wordIndex]));
     }
 
+    function getReplacementString($wordLength, $replacementChar)
+    {
+        return str_pad('', $wordLength, $replacementChar);
+    }
+
     function getLettersArray()
     {
         return [
@@ -61,10 +66,4 @@
     function unserializeLetters($serializedLetters)
     {
         return unserialize(urldecode($serializedLetters));
-    }
-
-
-    function getReplacementString($wordLength)
-    {
-        return str_pad('', $wordLength, REPLACEMENT_CHAR);
     }
