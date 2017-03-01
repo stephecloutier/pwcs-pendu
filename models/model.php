@@ -6,25 +6,6 @@
  * Time: 11:10
  */
 
-    function getWordsArray ()
-    {
-        return @file(SOURCE_NAME)?:false;
-    }
-
-    function getWordIndex($wordsArray)
-    {
-        return rand(0, count($wordsArray));
-    }
-
-    function getWordToFind($wordsArray, $wordIndex)
-    {
-        return strtolower(trim($wordsArray[$wordIndex]));
-    }
-
-    function getReplacementString($wordLength, $replacementChar)
-    {
-        return str_pad('', $wordLength, $replacementChar);
-    }
 
     function getLettersArray()
     {
@@ -56,6 +37,26 @@
             'y' => false,
             'z' => false
         ];
+    }
+
+    function getWordsArray ()
+    {
+        return @file(SOURCE_NAME)?:false;
+    }
+
+    function getWordIndex($wordsArray)
+    {
+        return rand(0, count($wordsArray));
+    }
+
+    function getWordToFind($wordsArray, $wordIndex)
+    {
+        return strtolower(trim($wordsArray[$wordIndex]));
+    }
+
+    function getReplacementString($wordLength, $replacementChar)
+    {
+        return str_pad('', $wordLength, $replacementChar);
     }
 
     function serializeLetters($array)

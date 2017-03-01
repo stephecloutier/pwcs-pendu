@@ -2,6 +2,7 @@
 
 
     // -- Vérification de la méthode du form. et include du fichier (ou erreur) correspondant(e)
+    // -- && Récupération du tableau associatif des lettres
 
     if($wordsArray = getWordsArray()){
       if($_SERVER['REQUEST_METHOD'] === 'POST') { 
