@@ -46,3 +46,8 @@ $wordLength = 0;
 $dashedWord = '';
 
 $isLetterFound = false;
+
+// ajouts pour nouvelle structure de fichiers
+
+define('SOURCE_NAME', 'datas/words.txt');
+define('REPLACEMENT_CHAR', '-');
