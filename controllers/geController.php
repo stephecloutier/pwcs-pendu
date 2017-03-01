@@ -6,6 +6,8 @@
  * Time: 11:08
  */
 
+    // -- Récupération du tableau des lettres
+    $lettersArray = getLettersArray();
 
     // -- Récupération de l'index et du mot à trouver (GET)
     $wordIndex = getWordIndex($wordsArray);
@@ -18,4 +20,4 @@
     $replacementString = getReplacementString($wordLength, REPLACEMENT_CHAR);
 
     // -- Encodage du tableau associatif des lettres
-    $serializedLetters = serializeLetters($wordsArray);
+    $serializedLetters = serializeLetters($lettersArray);
