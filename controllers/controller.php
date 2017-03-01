@@ -17,16 +17,20 @@
  */
 
 
-    // - Dans le fichier words.txt, calculer le nb de lignes du tableau (count du file) et en retourner un aléatoirement entre 0 et sa length - 1 (index commence à 0)
-    // - Si il est déjà défini, ne pas le chercher à nouveau et prendre la value de l'input wordIndex
+    $wordsArray = getWordsArray(); // Test à supprimer après divison du controller en get et post
+
+
+    // -- Récupération de l'index et du mot à trouver
+
     if(!isset($_POST['wordIndex'])) {
-        $wordIndex = rand(0, count(file(SOURCE_NAME)) - 1);
+        $wordIndex = getWordIndex($wordsArray);
+
     } else {
         $wordIndex = ($_POST['wordIndex']);
     }
 
-    // - Associer $wordToFind à l'index dans $wordIndex
-    $wordToFind = trim(file(SOURCE_NAME)[$wordIndex]);
+    $wordToFind = getWordToFind($wordsArray, $wordIndex);
+
     var_dump($wordToFind);
 
 

@@ -6,4 +6,7 @@
  * Time: 10:46
  */
 
-include('configs/settings.php');
+$serializedLetters = $_POST['serializedLetters'];
+$triedLetters = $_POST['triedLetters'];
+$wordIndex = $_POST['wordIndex'];
+$trials = $_POST['trials'];
