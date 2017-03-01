@@ -21,4 +21,8 @@ if(isset($_POST['triedLetters']) &&
         $wordLength = $_POST['wordLength'];
         $trials = $_POST['trials'];
 
+        $letters = urldecode($_POST['serializedLetters']);
+        $letters = unserialize($letters);
+        
+
     }

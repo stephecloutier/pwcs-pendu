@@ -58,9 +58,9 @@
         ];
     }
 
-    function serializedLetters($someArrayToSerialize)
+    function serializeLetters($array)
     {
-        return urlencode(serialize($someArrayToSerialize));
+        return urlencode(serialize($array));
     }
 
     function unserializeLetters($serializedLetters)

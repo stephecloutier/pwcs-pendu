@@ -19,22 +19,15 @@
 
 
     // -- Décodage du tableau comprenant les lettres avec leurs statuts
-    if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        // -- Récupérer les lettres dans triedLetters (input de type hidden)
-        if(isset($_POST['triedLetters'])) {
-            $triedLetters = $_POST['triedLetters'];
-        }
-        if(isset($_POST['serializedLetters'])){
-            $letters = urldecode($_POST['serializedLetters']);
-            $letters = unserialize($letters);
+
+
             if(isset($_POST['triedLetter'])){
                 if(!$letters[$_POST['triedLetter']]) {
                     $triedLetters .= $_POST['triedLetter'];
                 }
                 $letters[$_POST['triedLetter']] = true;
             }
-        }
-    }
+
 
     // -- Contrôle pour ajouter la lettre dans $replacementString si elle correspond à une/des lettres du mot $wordToFind
     for($i = 0; $i < strlen($triedLetters); $i++) {
