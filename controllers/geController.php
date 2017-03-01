@@ -6,24 +6,6 @@
  * Time: 11:08
  */
 
-    $serializedLetters = $_POST['serializedLetters'];
-    $lettersArray = getLettersArray();
+    // -- Récupération de l'index et du mot à trouver (GET)
+
     $wordIndex = getWordIndex($wordsArray);
-    $word = getWord($wordsArray, $wordIndex);
-    $lettersCount = strlen($word);
-    $replacementString = getReplacementString($lettersCount);
-    $trials = 0;
-
-
-    $triedLetter = $_POST['triedLetter'];
-    $triedLetters = '';
-    $lettersArray[$triedLetter] = false;
-    $serializedLetters = serializeLetters($lettersArray);
-
-
-    $wordFound = false;
-    $remainingTrials = TOTAL_TRIALS - $trials;
-
-
-    $letter = $_POST['triedLetter'];
-    $triedLetters .= $letter;

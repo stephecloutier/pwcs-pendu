@@ -16,11 +16,7 @@
     }
 
 
-    // -- Récupération de l'index et du mot à trouver (GET)
 
-    if(!isset($_POST['wordIndex'])) {
-        $wordIndex = getWordIndex($wordsArray);
-    }
 
     $wordToFind = getWordToFind($wordsArray, $wordIndex);
 
