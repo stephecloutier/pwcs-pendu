@@ -38,8 +38,7 @@ $wordLength = 0; // $lettersCount dans le fichier du prof
 $trials = 0;
 $remainingTrials = TOTAL_TRIALS;
 $triedLetters = '';
-$wordFound = 0;
-
+$isWordFound = false;
 
 
 $serializedLetters = '';
@@ -47,8 +46,6 @@ $serializedLetters = '';
 $wordIndex = 0;
 
 $wordToFind = '';
-
-
 
 $isLetterFound = false;
 
