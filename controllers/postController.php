@@ -44,4 +44,12 @@ if(isset($_POST['triedLetters']) &&
             }
         }
 
+        // -- Contrôle pour savoir si le mot est trouvé
+        if ($wordToFind === $replacementString) {
+            $isWordFound = true;
+        }
+
+        // -- Calcul du nombre de $trials fait
+        $trials = TOTAL_TRIALS - $remainingTrials;
+
     }

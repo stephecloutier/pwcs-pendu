@@ -18,16 +18,6 @@
 
     var_dump($wordToFind);
 
-    // -- Contrôle pour savoir si le mot est trouvé
-
-    if ($wordToFind === $replacementString) {
-        $isWordFound = true;
-    }
-
-    // -- Calcul du nombre de $trials fait
-
-    $trials = TOTAL_TRIALS - $remainingTrials;
-
 
     // -- Encodage des lettres pour les avoir en string
     $serializedLetters = serialize($letters);
