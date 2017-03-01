@@ -1,32 +1,25 @@
 <?php
 
-// Pour une différente structure de fichiers
 
-/*
- * if($wordsArray = getWordsArray()){
- *   if($_SERVER['REQUEST_METHOD'] === 'POST') { 
- *       include('controllers/postController.php');
- *   } elseif ($_SERVER['REQUEST_METHOD'] === 'GET') { 
- *      include('controllers/geController.php'); 
- *   } else { 
- *        die('Hey ça va pas la tête ? C\'est quoi cette méthode HTTP ?');
- *   }
- * } else {
- *   $error = '<p>Ooops, un problème est survenu lors de la récupération des mots</p>';
- * }
- */
+    // -- Vérification de la méthode du form. et include du fichier (ou erreur) correspondant(e)
 
-
-    $wordsArray = getWordsArray(); // Test à supprimer après divison du controller en get et post
+    if($wordsArray = getWordsArray()){
+      if($_SERVER['REQUEST_METHOD'] === 'POST') { 
+          include('controllers/postController.php');
+      } elseif ($_SERVER['REQUEST_METHOD'] === 'GET') { 
+         include('controllers/geController.php'); 
+      } else { 
+           die('Hey ça va pas la tête ? C\'est quoi cette méthode HTTP ?');
+      }
+    } else {
+      $error = '<p>Ooops, un problème est survenu lors de la récupération des mots</p>';
+    }
 
 
-    // -- Récupération de l'index et du mot à trouver
+    // -- Récupération de l'index et du mot à trouver (GET)
 
     if(!isset($_POST['wordIndex'])) {
         $wordIndex = getWordIndex($wordsArray);
-
-    } else {
-        $wordIndex = ($_POST['wordIndex']);
     }
 
     $wordToFind = getWordToFind($wordsArray, $wordIndex);
