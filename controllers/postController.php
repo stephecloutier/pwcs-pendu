@@ -23,4 +23,10 @@ if(isset($_POST['triedLetters']) &&
 
         $letters = unserializeLetters($serializedLetters);
 
+        // -- Contrôle de la lettre entrée par l'utilisateur : voir si elle n'est pas déjà présente et attribution de la valeur true
+        if(!$letters[$_POST['triedLetter']]) {
+            $triedLetters .= $_POST['triedLetter'];
+        }
+        $letters[$_POST['triedLetter']] = true;
+
     }

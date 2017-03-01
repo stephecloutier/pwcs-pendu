@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c24a51cd-c85e-4913-9c22-0c43c50d4790" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/geController.php" afterPath="$PROJECT_DIR$/controllers/geController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/controller.php" afterPath="$PROJECT_DIR$/controllers/controller.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/postController.php" afterPath="$PROJECT_DIR$/controllers/postController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,8 +47,8 @@
       <file leaf-file-name="postController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/postController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="35" lean-forward="false" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+            <state relative-caret-position="435">
+              <caret line="29" column="47" lean-forward="true" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
               <folding>
                 <element signature="e#6#86#0#PHP" expanded="true" />
               </folding>
@@ -59,8 +59,8 @@
       <file leaf-file-name="controller.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/controller.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="4" column="59" lean-forward="true" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="59" />
+            <state relative-caret-position="345">
+              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -127,9 +127,9 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/views/layout.php" />
         <option value="$PROJECT_DIR$/configs/settings.php" />
-        <option value="$PROJECT_DIR$/controllers/controller.php" />
         <option value="$PROJECT_DIR$/models/model.php" />
         <option value="$PROJECT_DIR$/controllers/geController.php" />
+        <option value="$PROJECT_DIR$/controllers/controller.php" />
         <option value="$PROJECT_DIR$/controllers/postController.php" />
       </list>
     </option>
@@ -330,12 +330,12 @@
       <workItem from="1487797484203" duration="4577000" />
       <workItem from="1487834934902" duration="7247000" />
       <workItem from="1487844443896" duration="4782000" />
-      <workItem from="1488396679737" duration="7616000" />
+      <workItem from="1488396679737" duration="7794000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24222000" />
+    <option name="totallyTimeSpent" value="24400000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="948" height="833" extended-state="0" />
@@ -602,14 +602,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="4" column="59" lean-forward="true" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/geController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -620,10 +612,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/postController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="35" lean-forward="false" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+        <state relative-caret-position="435">
+          <caret line="29" column="47" lean-forward="true" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
           <folding>
             <element signature="e#6#86#0#PHP" expanded="true" />
           </folding>

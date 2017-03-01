@@ -22,12 +22,7 @@
     // -- Décodage du tableau comprenant les lettres avec leurs statuts
 
 
-            if(isset($_POST['triedLetter'])){
-                if(!$letters[$_POST['triedLetter']]) {
-                    $triedLetters .= $_POST['triedLetter'];
-                }
-                $letters[$_POST['triedLetter']] = true;
-            }
+
 
 
     // -- Contrôle pour ajouter la lettre dans $replacementString si elle correspond à une/des lettres du mot $wordToFind
