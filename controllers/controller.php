@@ -15,16 +15,8 @@
       $error = '<p>Ooops, un problème est survenu lors de la récupération des mots</p>';
     }
 
-
-
-
-    $wordToFind = getWordToFind($wordsArray, $wordIndex);
-
     var_dump($wordToFind);
 
-
-    // - Longueur du $wordToFind
-    $wordLength = strlen($wordToFind);
 
     // -- Affichage des tirets pour le $wordToFind
     $replacementString = str_pad($replacementString, $wordLength, REPLACEMENT_CHAR);

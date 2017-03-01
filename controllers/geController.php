@@ -9,3 +9,8 @@
     // -- Récupération de l'index et du mot à trouver (GET)
 
     $wordIndex = getWordIndex($wordsArray);
+    $wordToFind = getWordToFind($wordsArray, $wordIndex);
+
+    // - Longueur du $wordToFind
+    $wordLength = strlen($wordToFind);
+
