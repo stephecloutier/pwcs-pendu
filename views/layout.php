@@ -5,12 +5,6 @@
         <title>Le pendu</title>
     </head>
     <body>
-        <form action="index.php">
-            <input type="submit" value="send">
-            <input type="hidden" name="chiffre" value="<?= $chiffre; ?>">
-        </form>
-        <p><?= $chiffre; ?></p>
-
 
         <h1>Trouve le mot en moins de <?= TOTAL_TRIALS; ?> coups!</h1>
         <div>
