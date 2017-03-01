@@ -16,8 +16,6 @@
  * }
  */
 
-    include('settings.php');
-
 
     // - Dans le fichier words.txt, calculer le nb de lignes du tableau (count du file) et en retourner un aléatoirement entre 0 et sa length - 1 (index commence à 0)
     // - Si il est déjà défini, ne pas le chercher à nouveau et prendre la value de l'input wordIndex
