@@ -48,6 +48,7 @@
                     <input type="submit" value="essayer cette lettre">
                 </div>
             </fieldset>
+            <a href="./">Tu souhaites recommencer&nbsp;?</a>
         </form>
         <?php elseif($isWordFound): ?>
         <div>
