@@ -21,15 +21,23 @@ if(isset($_POST['triedLetters']) &&
         $wordLength = $_POST['wordLength'];
         $trials = $_POST['trials'];
 
-        $letters = unserializeLetters($serializedLetters);
+        $lettersArray = unserializeLetters($serializedLetters);
+
+        $wordToFind = getWordToFind($wordsArray, $wordIndex);
+
+        $replacementString = getReplacementString($wordLength, REPLACEMENT_CHAR);
+
 
         // -- Contrôle de la lettre entrée par l'utilisateur : voir si elle n'est pas déjà présente et attribution de la valeur true
-        if(!$letters[$_POST['triedLetter']]) {
-            $triedLetters .= $_POST['triedLetter'];
-        }
-        $letters[$_POST['triedLetter']] = true;
 
-        // -- Contrôle pour ajouter la lettre dans $replacementString si elle correspond à une/des lettres du mot $wordToFind
+        if(!$lettersArray[$triedLetter]) {
+                $triedLetters .= $triedLetter;
+            }
+            $lettersArray[$triedLetter] = true;
+
+
+
+    // -- Contrôle pour ajouter la lettre dans $replacementString si elle correspond à une/des lettres du mot $wordToFind
         for($i = 0; $i < strlen($triedLetters); $i++) {
             // -- Calcul du nombre d'essais restants
             $isLetterFound = false;
@@ -44,6 +52,7 @@ if(isset($_POST['triedLetters']) &&
             }
         }
 
+
         // -- Contrôle pour savoir si le mot est trouvé
         if ($wordToFind === $replacementString) {
             $isWordFound = true;
@@ -52,4 +61,7 @@ if(isset($_POST['triedLetters']) &&
         // -- Calcul du nombre de $trials fait
         $trials = TOTAL_TRIALS - $remainingTrials;
 
-    }
+        $serializedLetters = serializeLetters($lettersArray);
+}
+
+

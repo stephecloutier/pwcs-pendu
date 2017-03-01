@@ -18,8 +18,8 @@
 
         <div>
             <p>Voici les lettres que tu as déjà essayées&nbsp;:
-                <?php foreach($letters as $letter => $statut) {
-                    if($statut){
+                <?php foreach($lettersArray as $letter => $status) {
+                    if($status){
                         echo $letter;
                     }
                 }
@@ -34,7 +34,7 @@
                 <div>
                     <label for="triedLetter">Choisis une lettre</label>
                     <select name="triedLetter" id="triedLetter">
-                        <?php foreach($letters as $letter => $status): ?>
+                        <?php foreach($lettersArray as $letter => $status): ?>
                             <?php if(!$status): ?>
                             <option value="<?= $letter; ?>"><?= $letter; ?></option>
                             <?php endif; ?>
@@ -49,8 +49,8 @@
                     <input type="submit" value="essayer cette lettre">
                 </div>
             </fieldset>
-            <a href="./">Tu souhaites recommencer&nbsp;?</a>
         </form>
+        <a href="./">Tu souhaites recommencer&nbsp;?</a>
         <?php elseif($isWordFound): ?>
         <div>
             <p>Bravo ! Tu as trouvé le mot <?= $wordToFind ?>! <a href="./">Recommencer&nbsp;?</a></p>
