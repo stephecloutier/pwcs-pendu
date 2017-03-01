@@ -86,7 +86,3 @@
     $serializedLetters = urlencode($serializedLetters);
 
 
-
-    include('layout.php');
-
-
