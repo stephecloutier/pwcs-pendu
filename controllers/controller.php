@@ -18,23 +18,17 @@
 
     include('settings.php');
 
-    // -- Compteur, pour comprendre la logique
-    if(isset($_GET['chiffre'])){
-        $chiffre = $_GET['chiffre'] + 1;
-    }else{
-        $chiffre = 0;
-    };
 
     // - Dans le fichier words.txt, calculer le nb de lignes du tableau (count du file) et en retourner un aléatoirement entre 0 et sa length - 1 (index commence à 0)
     // - Si il est déjà défini, ne pas le chercher à nouveau et prendre la value de l'input wordIndex
     if(!isset($_POST['wordIndex'])) {
-        $wordIndex = rand(0, count(file(DATAS_DIR.'/words.txt')) - 1);
+        $wordIndex = rand(0, count(file(SOURCE_NAME)) - 1);
     } else {
         $wordIndex = ($_POST['wordIndex']);
     }
 
     // - Associer $wordToFind à l'index dans $wordIndex
-    $wordToFind = trim(file(DATAS_DIR.'/words.txt')[$wordIndex]);
+    $wordToFind = trim(file(SOURCE_NAME)[$wordIndex]);
     var_dump($wordToFind);
 
 
@@ -42,7 +36,7 @@
     $wordLength = strlen($wordToFind);
 
     // -- Affichage des tirets pour le $wordToFind
-    $dashedWord = str_pad($dashedWord, $wordLength, '-');
+    $dashedWord = str_pad($dashedWord, $wordLength, REPLACEMENT_CHAR);
 
 
     // -- Décodage du tableau comprenant les lettres avec leurs statuts

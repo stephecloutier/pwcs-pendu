@@ -29,11 +29,13 @@ $letters = [
     'z' => false
 ];
 
+define('SOURCE_NAME', 'datas/words.txt');
+define('REPLACEMENT_CHAR', '-');
+define('TOTAL_TRIALS', 8);
+
 $serializedLetters = '';
 
 $triedLetters = '';
-
-define('TOTAL_TRIALS', 8);
 
 $remainingTrials = TOTAL_TRIALS;
 
@@ -47,7 +49,3 @@ $dashedWord = '';
 
 $isLetterFound = false;
 
-// ajouts pour nouvelle structure de fichiers
-
-define('SOURCE_NAME', 'datas/words.txt');
-define('REPLACEMENT_CHAR', '-');
