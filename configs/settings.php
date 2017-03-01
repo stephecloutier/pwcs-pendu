@@ -32,7 +32,8 @@ $letters = [
 define('SOURCE_NAME', 'datas/words.txt');
 define('REPLACEMENT_CHAR', '-');
 define('TOTAL_TRIALS', 8);
-error = '';
+$error = '';
+$replacementString = '';
 
 $serializedLetters = '';
 
@@ -45,8 +46,6 @@ $wordIndex = 0;
 $wordToFind = '';
 
 $wordLength = 0;
-
-$dashedWord = '';
 
 $isLetterFound = false;
 

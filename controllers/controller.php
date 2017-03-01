@@ -36,7 +36,7 @@
     $wordLength = strlen($wordToFind);
 
     // -- Affichage des tirets pour le $wordToFind
-    $dashedWord = str_pad($dashedWord, $wordLength, REPLACEMENT_CHAR);
+    $replacementString = str_pad($replacementString, $wordLength, REPLACEMENT_CHAR);
 
 
     // -- Décodage du tableau comprenant les lettres avec leurs statuts
@@ -57,13 +57,13 @@
         }
     }
 
-    // -- Contrôle pour ajouter la lettre dans $dashedWord si elle correspond à une/des lettres du mot $wordToFind
+    // -- Contrôle pour ajouter la lettre dans $replacementString si elle correspond à une/des lettres du mot $wordToFind
     for($i = 0; $i < strlen($triedLetters); $i++) {
         // -- Calcul du nombre d'essais restants
         $isLetterFound = false;
         for($j = 0; $j < $wordLength; $j++) {
             if($triedLetters[$i] === strtolower($wordToFind[$j])) {
-                $dashedWord[$j] = $wordToFind[$j];
+                $replacementString[$j] = $wordToFind[$j];
                 $isLetterFound = true;
             }
         }

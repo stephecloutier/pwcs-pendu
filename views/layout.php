@@ -8,7 +8,7 @@
 
         <h1>Trouve le mot en moins de <?= TOTAL_TRIALS; ?> coups!</h1>
         <div>
-            <p>Le mot à deviner compte <?= $wordLength; ?> lettres : <?= $dashedWord ?></p>
+            <p>Le mot à deviner compte <?= $wordLength; ?> lettres : <?= $replacementString ?></p>
         </div>
 
         <div class="imgPendu">
@@ -44,11 +44,11 @@
             </p>
         </div>
 
-        <?php if($wordToFind == $dashedWord): ?>
+        <?php if($wordToFind == $replacementString): ?>
 
         <?php endif; ?>
 
-        <?php if($remainingTrials != 0 && $wordToFind !== $dashedWord): ?>
+        <?php if($remainingTrials != 0 && $wordToFind !== $replacementString): ?>
         <form action="index.php" method="post">
             <fieldset>
                 <legend>Il te reste <?= $remainingTrials; ?> tentatives avant de mourir&nbsp;!</legend>
@@ -69,7 +69,7 @@
                 </div>
             </fieldset>
         </form>
-        <?php elseif($wordToFind == $dashedWord): ?>
+        <?php elseif($wordToFind == $replacementString): ?>
         <div>
             <p>Bravo ! Tu as trouvé le mot <?= $wordToFind ?>! <a href="./">Recommencer&nbsp;?</a></p>
         </div>
