@@ -18,9 +18,3 @@
 
     var_dump($wordToFind);
 
-
-    // -- Encodage des lettres pour les avoir en string
-    $serializedLetters = serialize($letters);
-    $serializedLetters = urlencode($serializedLetters);
-
-
