@@ -1,5 +1,8 @@
 <?php
 
+    session_start();
+
+
     include(CONFIGS_DIR . '/settings.php');
     include(MODELS_DIR . '/model.php');
 
