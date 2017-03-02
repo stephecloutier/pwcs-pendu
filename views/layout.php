@@ -27,7 +27,7 @@
             </p>
         </div>
 
-        <?php if($remainingTrials != 0 && $wordToFind !== $replacementString): ?>
+        <?php if($remainingTrials != 0 && !$isWordFound): ?>
         <form action="index.php" method="post">
             <fieldset>
                 <legend>Il te reste <?= $remainingTrials; ?> tentatives avant de mourir&nbsp;!</legend>
