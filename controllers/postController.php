@@ -36,7 +36,6 @@ if(isset($_POST['triedLetters']) &&
             $lettersArray[$triedLetter] = true;
 
 
-
         // -- Contrôle pour ajouter la lettre dans $replacementString si elle correspond à une/des lettres du mot $wordToFind
         for($i = 0; $i < strlen($triedLetters); $i++) {
             // -- Calcul du nombre d'essais restants
