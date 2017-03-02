@@ -6,24 +6,25 @@
  * Time: 10:46
  */
 
+/*if(!isset($_COOKIE['triedLetter'])) {
+    die('Il faut autoriser les cookies sur votre navigateur pour jouer au jeu !');
+}*/
 
-if(isset($_POST['triedLetters']) &&
-   isset($_POST['triedLetter']) &&
-   isset($_POST['serializedLetters']) &&
-   isset($_POST['wordIndex']) &&
-   isset($_POST['wordLength']) &&
-   isset($_POST['replacementString']) &&
-   isset($_POST['trials'])
+if(isset($_COOKIE['cookie_datas']) &&
+   isset($_POST['triedLetter'])
   ) {
-        $triedLetter = $_POST['triedLetter'];
-        $triedLetters = $_POST['triedLetters'];
-        $serializedLetters = $_POST['serializedLetters'];
-        $wordIndex = $_POST['wordIndex'];
-        $wordLength = $_POST['wordLength'];
-        $replacementString = $_POST['replacementString'];
-        $trials = $_POST['trials'];
 
-        $lettersArray = unserializeLetters($serializedLetters);
+        $triedLetter = $_POST['triedLetter'];
+
+        $cookie_datas = decode($_COOKIE['cookie_datas']);
+
+
+        $lettersArray = $cookie_datas['lettersArray'];
+        $triedLetters = $cookie_datas['triedLetters'];
+        $wordIndex = $cookie_datas['wordIndex'];
+        $wordLength = $cookie_datas['wordLength'];
+        $replacementString = $cookie_datas['replacementString'];
+        $trials = $cookie_datas['trials'];
 
         $wordToFind = getWordToFind($wordsArray, $wordIndex);
 
@@ -55,7 +56,10 @@ if(isset($_POST['triedLetters']) &&
 
         $remainingTrials = TOTAL_TRIALS - $trials;
 
-        $serializedLetters = serializeLetters($lettersArray);
+
+        $cookie_datas = encode(compact('lettersArray', 'triedLetters', 'wordIndex', 'wordLength', 'replacementString', 'trials'));
+
+        setcookie('cookie_datas', $cookie_datas);
 }
 
 

@@ -59,12 +59,12 @@
         return str_pad('', $wordLength, $replacementChar);
     }
 
-    function serializeLetters($array)
+    function encode($array)
     {
         return urlencode(serialize($array));
     }
 
-    function unserializeLetters($serializedLetters)
+    function decode($array)
     {
-        return unserialize(urldecode($serializedLetters));
+        return unserialize(urldecode($array));
     }

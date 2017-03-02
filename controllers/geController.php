@@ -6,18 +6,24 @@
  * Time: 11:08
  */
 
-    // -- Récupération du tableau des lettres
-    $lettersArray = getLettersArray();
+// -- Récupération du tableau des lettres
+$lettersArray = getLettersArray();
 
-    // -- Récupération de l'index et du mot à trouver (GET)
-    $wordIndex = getWordIndex($wordsArray);
-    $wordToFind = getWordToFind($wordsArray, $wordIndex);
+// -- Récupération de l'index et du mot à trouver (GET)
+$wordIndex = getWordIndex($wordsArray);
+$wordToFind = getWordToFind($wordsArray, $wordIndex);
 
-    // -- Longueur du $wordToFind
-    $wordLength = strlen($wordToFind);
+// -- Longueur du $wordToFind
+$wordLength = strlen($wordToFind);
 
-    // -- Affichage des tirets pour le $wordToFind
-    $replacementString = getReplacementString($wordLength, REPLACEMENT_CHAR);
+// -- Affichage des tirets pour le $wordToFind
+$replacementString = getReplacementString($wordLength, REPLACEMENT_CHAR);
 
-    // -- Encodage du tableau associatif des lettres
-    $serializedLetters = serializeLetters($lettersArray);
+// -- Encodage du tableau associatif des lettres
+$serializedLetters = encode($lettersArray);
+
+
+// -- Cookiiiies !
+$cookie_datas = encode(compact('lettersArray', 'triedLetters', 'wordIndex', 'wordLength', 'replacementString', 'trials'));
+setcookie('cookie_datas', $cookie_datas);
+

@@ -11,9 +11,9 @@ $remainingTrials = TOTAL_TRIALS;
 $triedLetters = '';
 $isWordFound = false;
 $isLetterFound = false;
+$triedLetter = '';
 
 
-$serializedLetters = '';
 $wordIndex = 0;
 $wordToFind = '';
 
