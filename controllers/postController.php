@@ -35,7 +35,7 @@ if(isset($_POST['triedLetters']) &&
         $lettersArray[$triedLetter] = true;
 
 
-        // -- Contrôle différent, avec méthode pour les strings
+        // -- Contrôle avec méthode pour les strings
         $isLetterFound = false;
         for($i = 0; $i < $wordLength; $i++) {
             $l = substr($wordToFind, $i, 1);
