@@ -27,15 +27,12 @@ if(isset($_POST['triedLetters']) &&
 
         $wordToFind = getWordToFind($wordsArray, $wordIndex);
 
-        $replacementString = getReplacementString($wordLength, REPLACEMENT_CHAR);
-
-
         // -- Contrôle de la lettre entrée par l'utilisateur : voir si elle n'est pas déjà présente et attribution de la valeur true
 
         if(!$lettersArray[$triedLetter]) {
                 $triedLetters .= $triedLetter;
             }
-            $lettersArray[$triedLetter] = true;
+        $lettersArray[$triedLetter] = true;
 
 
         // -- Contrôle différent, avec méthode pour les strings
