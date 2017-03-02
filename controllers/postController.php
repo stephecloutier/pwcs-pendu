@@ -12,6 +12,7 @@ if(isset($_POST['triedLetters']) &&
    isset($_POST['serializedLetters']) &&
    isset($_POST['wordIndex']) &&
    isset($_POST['wordLength']) &&
+   isset($_POST['replacementString']) &&
    isset($_POST['trials'])
   ) {
         $triedLetter = $_POST['triedLetter'];
@@ -19,6 +20,7 @@ if(isset($_POST['triedLetters']) &&
         $serializedLetters = $_POST['serializedLetters'];
         $wordIndex = $_POST['wordIndex'];
         $wordLength = $_POST['wordLength'];
+        $replacementString = $_POST['replacementString'];
         $trials = $_POST['trials'];
 
         $lettersArray = unserializeLetters($serializedLetters);
@@ -36,29 +38,25 @@ if(isset($_POST['triedLetters']) &&
             $lettersArray[$triedLetter] = true;
 
 
-        // -- Contrôle pour ajouter la lettre dans $replacementString si elle correspond à une/des lettres du mot $wordToFind
-        for($i = 0; $i < strlen($triedLetters); $i++) {
-            // -- Calcul du nombre d'essais restants
-            $isLetterFound = false;
-            for($j = 0; $j < $wordLength; $j++) {
-                if($triedLetters[$i] === strtolower($wordToFind[$j])) {
-                    $replacementString[$j] = $wordToFind[$j];
-                    $isLetterFound = true;
-                }
-            }
-            if(!$isLetterFound){
-                $remainingTrials--;
+        // -- Contrôle différent, avec méthode pour les strings
+        $isLetterFound = false;
+        for($i = 0; $i < $wordLength; $i++) {
+            $l = substr($wordToFind, $i, 1);
+            if($triedLetter == $l) {
+                $isLetterFound = true;
+                $replacementString = substr_replace($replacementString, $l, $i, 1);
             }
         }
 
-
-        // -- Contrôle pour savoir si le mot est trouvé
-        if ($wordToFind === $replacementString) {
-            $isWordFound = true;
+        if(!$isLetterFound){
+            $trials++;
+        } else {
+            if ($replacementString === $wordToFind) {
+                $isWordFound = true;
+            }
         }
 
-        // -- Calcul du nombre de $trials fait
-        $trials = TOTAL_TRIALS - $remainingTrials;
+        $remainingTrials = TOTAL_TRIALS - $trials;
 
         $serializedLetters = serializeLetters($lettersArray);
 }
