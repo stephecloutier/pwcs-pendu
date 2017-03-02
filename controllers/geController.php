@@ -24,6 +24,5 @@ $serializedLetters = encode($lettersArray);
 
 
 // -- Cookiiiies !
-$cookie_datas = encode(compact('lettersArray', 'triedLetters', 'wordIndex', 'wordLength', 'replacementString', 'trials'));
-setcookie('cookie_datas', $cookie_datas);
+$_SESSION['cookie_datas'] = compact('lettersArray', 'triedLetters', 'wordIndex', 'wordLength', 'replacementString', 'trials');
 

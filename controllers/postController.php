@@ -10,13 +10,13 @@
     die('Il faut autoriser les cookies sur votre navigateur pour jouer au jeu !');
 }*/
 
-if(isset($_COOKIE['cookie_datas']) &&
+if(isset($_SESSION['cookie_datas']) &&
    isset($_POST['triedLetter'])
   ) {
 
         $triedLetter = $_POST['triedLetter'];
 
-        $cookie_datas = decode($_COOKIE['cookie_datas']);
+        $cookie_datas = $_SESSION['cookie_datas'];
 
 
         $lettersArray = $cookie_datas['lettersArray'];
@@ -57,9 +57,7 @@ if(isset($_COOKIE['cookie_datas']) &&
         $remainingTrials = TOTAL_TRIALS - $trials;
 
 
-        $cookie_datas = encode(compact('lettersArray', 'triedLetters', 'wordIndex', 'wordLength', 'replacementString', 'trials'));
-
-        setcookie('cookie_datas', $cookie_datas);
+        $_SESSION['cookie_datas'] = compact('lettersArray', 'triedLetters', 'wordIndex', 'wordLength', 'replacementString', 'trials');
 }
 
 
