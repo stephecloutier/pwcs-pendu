@@ -7,22 +7,21 @@
  */
 
 // -- Récupération du tableau des lettres
-$lettersArray = getLettersArray();
+$_SESSION['lettersArray'] = getLettersArray();
 
 // -- Récupération de l'index et du mot à trouver (GET)
-$wordIndex = getWordIndex($wordsArray);
-$wordToFind = getWordToFind($wordsArray, $wordIndex);
+$_SESSION['wordIndex'] = getWordIndex($wordsArray);
+$wordToFind = getWordToFind($wordsArray, $_SESSION['wordIndex']);
 
 // -- Longueur du $wordToFind
-$wordLength = strlen($wordToFind);
+$_SESSION['wordLength'] = strlen($wordToFind);
 
 // -- Affichage des tirets pour le $wordToFind
-$replacementString = getReplacementString($wordLength, REPLACEMENT_CHAR);
+$_SESSION['replacementString'] = getReplacementString($_SESSION['wordLength'], REPLACEMENT_CHAR);
 
-// -- Encodage du tableau associatif des lettres
-$serializedLetters = encode($lettersArray);
+// -- Initialiser Trials
+$_SESSION['trials'] = 0;
 
-
-// -- Cookiiiies !
-$_SESSION['cookie_datas'] = compact('lettersArray', 'triedLetters', 'wordIndex', 'wordLength', 'replacementString', 'trials');
+// -- Initialiser triedLetters
+$_SESSION['triedLetters'] = '';
 

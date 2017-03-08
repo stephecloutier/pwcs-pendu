@@ -9,16 +9,16 @@
 
         <h1>Trouve le mot en moins de <?= TOTAL_TRIALS; ?> coups!</h1>
         <div>
-            <p>Le mot à deviner compte <?= $wordLength; ?> lettres : <?= $replacementString ?></p>
+            <p>Le mot à deviner compte <?= $_SESSION['wordLength']; ?> lettres : <?= $_SESSION['replacementString'] ?></p>
         </div>
 
         <div class="imgPendu">
-            <img src="images/pendu<?= $trials; ?>.gif" alt="Image de l'essai #<?= $trials; ?>" />
+            <img src="images/pendu<?= $_SESSION['trials']; ?>.gif" alt="Image de l'essai #<?= $_SESSION['trials']; ?>" />
         </div>
 
         <div>
             <p>Voici les lettres que tu as déjà essayées&nbsp;:
-                <?php foreach($lettersArray as $letter => $status) {
+                <?php foreach($_SESSION['lettersArray'] as $letter => $status) {
                     if($status){
                         echo $letter;
                     }
@@ -34,7 +34,7 @@
                 <div>
                     <label for="triedLetter">Choisis une lettre</label>
                     <select name="triedLetter" id="triedLetter">
-                        <?php foreach($lettersArray as $letter => $status): ?>
+                        <?php foreach($_SESSION['lettersArray'] as $letter => $status): ?>
                             <?php if(!$status): ?>
                             <option value="<?= $letter; ?>"><?= $letter; ?></option>
                             <?php endif; ?>

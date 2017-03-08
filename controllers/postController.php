@@ -10,54 +10,41 @@
     die('Il faut autoriser les cookies sur votre navigateur pour jouer au jeu !');
 }*/
 
-if(isset($_SESSION['cookie_datas']) &&
+if(isset($_SESSION['lettersArray']) &&
    isset($_POST['triedLetter'])
   ) {
 
-        $triedLetter = $_POST['triedLetter'];
 
-        $cookie_datas = $_SESSION['cookie_datas'];
-
-
-        $lettersArray = $cookie_datas['lettersArray'];
-        $triedLetters = $cookie_datas['triedLetters'];
-        $wordIndex = $cookie_datas['wordIndex'];
-        $wordLength = $cookie_datas['wordLength'];
-        $replacementString = $cookie_datas['replacementString'];
-        $trials = $cookie_datas['trials'];
-
-        $wordToFind = getWordToFind($wordsArray, $wordIndex);
+        $wordToFind = getWordToFind($wordsArray, $_SESSION['wordIndex']);
 
         // -- Contrôle de la lettre entrée par l'utilisateur : voir si elle n'est pas déjà présente et attribution de la valeur true
 
-        if(!$lettersArray[$triedLetter]) {
-                $triedLetters .= $triedLetter;
+        if(!$_SESSION['lettersArray'][$_POST['triedLetter']]) {
+            $_SESSION['triedLetters'] .= $_POST['triedLetter'];
             }
-        $lettersArray[$triedLetter] = true;
+        $_SESSION['lettersArray'][$_POST['triedLetter']] = true;
 
 
         // -- Contrôle différent, avec méthode pour les strings
         $isLetterFound = false;
-        for($i = 0; $i < $wordLength; $i++) {
-            $l = substr($wordToFind, $i, 1);
-            if($triedLetter == $l) {
+        for($i = 0; $i < $_SESSION['wordLength']; $i++) {
+            $currentLetter = substr($wordToFind, $i, 1);
+            if($_POST['triedLetter'] == $currentLetter) {
                 $isLetterFound = true;
-                $replacementString = substr_replace($replacementString, $l, $i, 1);
+                $_SESSION['replacementString'] = substr_replace($_SESSION['replacementString'], $currentLetter, $i, 1);
             }
         }
 
         if(!$isLetterFound){
-            $trials++;
+            $_SESSION['trials']++;
         } else {
-            if ($replacementString === $wordToFind) {
+            if ($_SESSION['replacementString'] === $wordToFind) {
                 $isWordFound = true;
             }
         }
 
-        $remainingTrials = TOTAL_TRIALS - $trials;
+        $remainingTrials = TOTAL_TRIALS - $_SESSION['trials'];
 
-
-        $_SESSION['cookie_datas'] = compact('lettersArray', 'triedLetters', 'wordIndex', 'wordLength', 'replacementString', 'trials');
 }
 
 
